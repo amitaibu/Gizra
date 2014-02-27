@@ -2,6 +2,7 @@
 published: false
 ---
 
-## A New Post
+Selling an opensource idea sounds like an oxymoron, but in reality it is not. Through my experience with different high profile modules I'll explain how even open source projects are part of the 
 
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+## The Currency
+Open source is measured by its popularity. I would dare to say that its code quiality is only one parametr when one evaluates a project, and not necessarily the most important one.

@@ -105,6 +105,7 @@ will be transformed into:
 </section>
 <section class="bottom"></section>
 ```
+
 #### Multiplication: ```*```
 Use the * operator define how many times this element will be outputted.
 
@@ -119,4 +120,101 @@ will be transformed into:
   <li></li>
   <li></li>
 </ul>
+```
+#### Grouping: ```()```
+Use the () operator to group subtrees in complex abbreviations, This gives you an easier
+control of the elements position in the structured tree.
+
+this abbreviation:
+```
+div.wrapper>(header>ul>li.item*2>a)+section.main+footer
+```
+will be transformed into:
+```html
+<div class="wrapper">
+  <header>
+    <ul>
+      <li class="item"><a href=""></a></li>
+      <li class="item"><a href=""></a></li>
+    </ul>
+  </header>
+  <section class="main"></section>
+  <footer></footer>
+</div>
+```
+* You can nest groups inside each other combined with the multiplication * operator.
+
+this abbreviation:
+```
+table>(tr>(td.name+td.age))*2
+```
+will be transformed into:
+```html
+<table>
+  <tr>
+    <td class="name"></td>
+    <td class="age"></td>
+  </tr>
+  <tr>
+    <td class="name"></td>
+    <td class="age"></td>
+  </tr>
+</table>
+```
+
+### Attribute operators:
+This operators are used to modify attributes of outputted elements.
+
+#### ID and CLASS:
+To define an ID or CLASS to an element you use the already known notation for a CSS selector.
+* ID operator is ```#```
+* CLASS operator is ```.```
+
+this abbreviation:
+```
+div#header+div.wrapper>div.class1.class2
+```
+will be transformed into:
+```html
+<div id="header"></div>
+<div class="wrapper">
+  <div class="class1 class2"></div>
+</div>
+```
+
+#### Custom attributes:
+To define an attribute to an element you use the already known notation we use in CSS for attributes.
+* Attribute is defined inside the ```[]```
+
+this abbreviation:
+```
+div[title="sample title" style="color: green;"]
+```
+will be transformed into:
+```html
+<div title="sample title" style="color: green;"></div>
+```
+
+* You define as many attributes as you like inside the square brackets.
+* Attributes don't have to include a value, ``` div[title style]``` will transform into ```<div title="" style=""></div>```.
+* Supports "tabstops" inside every empty attributes (will be covered later in this tutorial).
+
+### Item numbering ```$```
+Use the $ operator cab be used to number anything you want. Emmet will find the first occurrence
+of this $ and will auto increment(the increment dependence on various variables that you can pass). you can place it any where you want.
+
+this abbreviation:
+```
+div>ol>li.item-$*4
+```
+will be transformed into:
+```html
+<div>
+  <ol>
+    <li class="item-1"></li>
+    <li class="item-2"></li>
+    <li class="item-3"></li>
+    <li class="item-4"></li>
+  </ol>
+</div>
 ```

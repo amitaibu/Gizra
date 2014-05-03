@@ -8,10 +8,10 @@ tags:
 permalink: /content/emmet-tutorial/
 created: 1398453017
 layout: post
-published: true
+published: false
 ---
 
-##### Did you ever wanted to create an “instant” html and css ?
+#### Did you ever wanted to create an “instant” html and css ?
 If you answered “yes” then you are in the perfect place to meet the ultimate tool that will enhance your productivity and save you a lot of time when coding.
 Some of you may know it as “Zen coding” and for quite some time (2012) it’s known as <a href="http://emmet.io/">Emmet</a>.
 
@@ -74,4 +74,49 @@ will be transformed into:
     <div class="child"></div>
   </div>
 </div>
+```
+
+#### Siblings: ```+```
+Use the + operator to place elements on the same level base - near each other.
+
+this abbreviation:
+```
+header+section+footer
+```
+will be transformed into:
+```html
+<header></header>
+<section></section>
+<footer></footer>
+```
+#### Climb up: ```^```
+Use the ^ operator to climb one level up and place the element in that position.
+You can use as many ^ operators as you want, this gives you the ability to move several levels up.
+
+this abbreviation:
+```
+section.top+section.middle>p^section.bottom
+```
+will be transformed into:
+```html
+<section class="top"></section>
+<section class="middle">
+  <p></p>
+</section>
+<section class="bottom"></section>
+```
+#### Multiplication: ```*```
+Use the * operator define how many times this element will be outputted.
+
+this abbreviation:
+```
+ul>li*3
+```
+will be transformed into:
+```html
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
 ```

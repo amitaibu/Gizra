@@ -47,12 +47,31 @@ will be transformed into:
 ```
 
 If we examine the syntax we can see it’s mainly constructed out of ”html tags” and “css selectors” alongside special characters that bounds the connection (logic) between them.   
-This makes it easy to use for any one who knows html and css, specialy web developers.
+This makes it easy to use for any one who knows html and css, specially web developers.
 
 Emmet is very flexible and can be expanded to meet your needs by allowing you to:
+(this things are beyond the scope of this tutorial).
 * Add your own or update existing snippets.
 * Change behavior of some Emmet filters and actions.
 * Define how generated HTML/XML should look.
 
 
 
+### Nesting operators:
+Nesting operators are used to position the abbreviation in the structured tree.
+
+#### Child: ```>```
+Use the > operator to nest elements inside each other.
+
+this abbreviation:
+```
+div.grandparent>div.parent>div.child
+```
+will be transformed into:
+```html
+<div class="grandparent">
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+</div>
+```

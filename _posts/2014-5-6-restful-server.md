@@ -9,6 +9,8 @@ Up until now our go to module was RestWs by the wonderful Klausi, which wraps ar
 It works fine, however the JSON it exposes has too much information. 
 Obviously, RestWs allows us to alter the JSON, but then we saw other problems. Drupalism. As the client - the one that consumes the JSON - you should know that an article is a node entity, and that tags are taxonomy terms. And all the fields are prefixed with ``field_``. And on top of that, once we expose an entity (e.g. node) - all the bundles are exposed by default.
 
+<-- more -->
+
 After trying to impose Gizra's requirements to RestWs and Services Entity, we've realized that the concepts were different enough to start a new module - but of course we learned a lot from the other modules. 
 The goal of RESTful module is to allow us to expose a _versionable_ API which is as good as Github, or Flickr, or any other proper REST service (just imagine if Github would force you to enter the bundle of a node, or would expose the repository name under ``field_repository``).
 

@@ -2,6 +2,7 @@
 title: RESTful module
 tags:
   - RESTful
+  - AngularJs
   - "Drupal-planet"
 permalink: "/content/restful-server"
 layout: post
@@ -35,6 +36,7 @@ array(
   'id' => 1,
   'label' => 'example title',
 );
+?>
 ```
 
 In the past year almost every site we have is either completely decoupled from the server side where AngularJs serves the webapp, or AngularJS plays a smaller part, and we just embed web components inside a Drupal page to provide a slick UI.
@@ -51,7 +53,7 @@ The goal of RESTful module is to allow us to expose a _versionable_ API which is
 
 Another important aspect of RESTful is that it does _not_ try to be a pure REST server. No. We're not writing a thesis, we are writing a web application, so we prefer to follow [best practices](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api) rather then reaching "restful glory".
 
-Following our standard of bundling the module with an example module, you can enable the ``RESTful example`` module, and create a few article nodes.
-Then visit ``/api/v1/articles`` to see a list of articles, or ``/api/v1/articles/1`` to view article with ID 1.  
-The code that is responsible for this restful ``resource`` is a CTools plugin, and should be pretty easy for developers to setup.  
+Following our standard of bundling the module with an [example module](https://github.com/Gizra/restful/tree/7.x-1.x/modules/restful_example), you can enable it, and create a few article nodes.  
+Visit ``/api/v1/articles`` to see a list of articles, or ``/api/v1/articles/1`` to view article with ID 1.  
+The code that is responsible for this restful ``resource`` is a CTools plugin which should be pretty easy for developers to setup.  
 Another good resource for developers to see the capabilites that are present so far, is following the [test suite](https://github.com/Gizra/restful/tree/7.x-1.x/tests).

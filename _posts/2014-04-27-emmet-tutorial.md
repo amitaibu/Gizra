@@ -56,7 +56,6 @@ Emmet is very flexible and can be expanded to meet your needs by allowing you to
 * Define how generated HTML/XML should look.
 
 
-
 ### Nesting operators:
 Nesting operators are used to position the abbreviation in the structured tree.
 
@@ -195,9 +194,25 @@ will be transformed into:
 <div title="sample title" style="color: green;"></div>
 ```
 
-* You define as many attributes as you like inside the square brackets.
+* There is no limit  to the numbers of attributes you can define.
 * Attributes don't have to include a value, ``` div[title style]``` will transform into ```<div title="" style=""></div>```.
 * Supports "tabstops" inside every empty attributes (will be covered later in this tutorial).
+
+
+#### Text ```{}```
+The curly braces enables the adding of text to an element.
+
+this abbreviation:
+```
+div>p{some random text}
+```
+
+will be transformed into:
+```html
+<div>
+  <p>some random text</p>
+</div>
+```
 
 #### Item numbering ```$```
 This ```$``` operator can be used to add numbers.
@@ -231,7 +246,7 @@ will be transformed into:
 </ol>
 ```
 
-This ```@N``` operator controls the base value.
+##### This ```@N``` operator controls the base value.
 
 this abbreviation:
 ```
@@ -247,7 +262,7 @@ will be transformed into:
 </ol>
 ```
 
-This ```@-``` operator controls the sort order of the numbers (ascending/descending)
+##### This ```@-``` operator controls the sort order of the numbers (ascending/descending)
 
 this abbreviation:
 ```

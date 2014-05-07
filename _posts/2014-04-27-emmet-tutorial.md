@@ -199,22 +199,82 @@ will be transformed into:
 * Attributes don't have to include a value, ``` div[title style]``` will transform into ```<div title="" style=""></div>```.
 * Supports "tabstops" inside every empty attributes (will be covered later in this tutorial).
 
-### Item numbering ```$```
-Use the $ operator cab be used to number anything you want. Emmet will find the first occurrence
-of this $ and will auto increment(the increment dependence on various variables that you can pass). you can place it any where you want.
+#### Item numbering ```$```
+This ```$``` operator can be used to add numbers.
+It could be used to number an element name, attribute or value.
 
 this abbreviation:
 ```
-div>ol>li.item-$*4
+ol>li.class$*3
 ```
+
 will be transformed into:
 ```html
-<div>
-  <ol>
-    <li class="item-1"></li>
-    <li class="item-2"></li>
-    <li class="item-3"></li>
-    <li class="item-4"></li>
-  </ol>
-</div>
+<ol>
+  <li class="class1"></li>
+  <li class="class2"></li>
+  <li class="class3"></li>
+</ol>
+```
+
+this abbreviation:
+```
+ol>li{text: $$$}*3
+```
+
+will be transformed into:
+```html
+<ol>
+  <li>text: 001</li>
+  <li>text: 002</li>
+  <li>text: 003</li>
+</ol>
+```
+
+This ```@N``` operator controls the base value.
+
+this abbreviation:
+```
+ol>li.class-$@10*3
+```
+
+will be transformed into:
+```html
+<ol>
+  <li class="class-10"></li>
+  <li class="class-11"></li>
+  <li class="class-12"></li>
+</ol>
+```
+
+This ```@-``` operator controls the sort order of the numbers (ascending/descending)
+
+this abbreviation:
+```
+ol>li.class-$@-*3
+```
+
+will be transformed into:
+```html
+<ol>
+  <li class="class-3"></li>
+  <li class="class-2"></li>
+  <li class="class-1"></li>
+</ol>
+```
+
+It's also possible to combine both operators.
+
+this abbreviation:
+```
+ol>li.class-$@-8*3
+```
+
+will be transformed into:
+```html
+<ol>
+  <li class="class-10"></li>
+  <li class="class-9"></li>
+  <li class="class-8"></li>
+</ol>
 ```

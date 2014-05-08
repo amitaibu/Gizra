@@ -25,15 +25,55 @@ Here you can find an [example](https://github.com/ceoaliongroo/contrib/tree/mast
 
 Let's configure together travis ci for the AngularJS application genereted by yeoman.io:
 
+- Open Gruntfile.js and modify the
+
+```javascript
+  // Test settings
+  karma: {
+    unit: {
+      configFile: 'karma.conf.js',
+      singleRun: true,
+      browsers: ['Firefox']
+    }
+  }
+```
+
+Adding the line `browsers: ['Firefox']` permit run the test with firefox, this is compatible with travis ci.
+
 - Open karma.conf.js and change to Firefox travis ci do not support chrome configure by default.
 
 ```javascript
   browsers: ['Firefox'],
 ```
 
-- Add travis ci configuration to run karma unit test files:
+- Install dependencies to test.
+
+Karma:
+```bash
+# npm install karma grunt-karma karma-jasmine karma-firefox-launcher --save-dev
+```
+
+- Modify travis ci configuration file to run karma unit test files, you can open travis.yml (normally in the root of the project):
+
+```yaml
+  language: node_js
+  node_js:
+    - '0.10'
+  before_install:
+    - 'export DISPLAY=:99.0'
+    - 'sh -e /etc/init.d/xvfb start'
+  before_script:
+    - 'gem update --system'
+    - 'gem install sass --version "=3.2.12"'
+    - 'gem install compass --version "=0.12.2"'
+    - 'npm install -g bower grunt-cli karma-cli'
+    - 'bower install'
+```
 
 - Configure webhook in github.
+
+
+
 
 - Check the test runnig in travis ci.
 

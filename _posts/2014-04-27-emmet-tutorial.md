@@ -46,6 +46,9 @@ will be transformed into:
 </div>
 ```
 
+* To expand this abbreviation into a structured html we need to press the ```tab``` key.
+  Every IDE that uses emmet plugin may have a different key configuration, most of them uses the tab key.
+
 If we examine the syntax we can see it’s mainly constructed out of ”html tags” and “css selectors” alongside special characters that bounds the connection (logic) between them.   
 This makes it easy to use for any one who knows html and css, specially web developers.
 
@@ -212,6 +215,34 @@ will be transformed into:
 <div>
   <p>some random text</p>
 </div>
+```
+
+* Emmet has a nice feature called ```Lorem Ipsum” generator``` to generate a dummy text,
+
+this abbreviation:
+```
+p>lorem
+```
+
+will be transformed into:
+```html
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse nisi pariatur
+perferendis, quod ratione similique soluta. A animi consequatur ipsa labore
+omnis perspiciatis quo sequi ut. Asperiores corporis repellat suscipit?
+</p>
+```
+
+* We can add a number To control the amount of words been generated.
+
+this abbreviation:
+```
+p>lorem5
+```
+
+will be transformed into:
+```html
+<p>Lorem ipsum dolor sit amet.</p>
 ```
 
 #### Item numbering ```$```

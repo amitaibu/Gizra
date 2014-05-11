@@ -32,6 +32,10 @@ this abbreviation:
 ```
 div#wrapper>div.box+ul#navigation>li*5>a{Item $}
 ```
+
+* To expand this abbreviation into a structured html we need to press the ```tab``` key.
+Every IDE that uses emmet plugin may have a different key configuration, most of them uses the tab key.
+
 will be transformed into:
 ```html
 <div id="wrapper">
@@ -46,10 +50,7 @@ will be transformed into:
 </div>
 ```
 
-* To expand this abbreviation into a structured html we need to press the ```tab``` key.
-  Every IDE that uses emmet plugin may have a different key configuration, most of them uses the tab key.
-
-If we examine the syntax we can see it’s mainly constructed out of ”html tags” and “css selectors” alongside special characters that bounds the connection (logic) between them.   
+If we examine the syntax we can see it’s mainly constructed out of ”html tags” and “css selectors” alongside special characters that bounds the connection (logic) between them.
 This makes it easy to use for any one who knows html and css, specially web developers.
 
 Emmet is very flexible and can be expanded to meet your needs by allowing you to:
@@ -58,6 +59,7 @@ Emmet is very flexible and can be expanded to meet your needs by allowing you to
 * Change behavior of some Emmet filters and actions.
 * Define how generated HTML/XML should look.
 
+#### Generating html with Emmet.
 
 ### Nesting operators:
 Nesting operators are used to position the abbreviation in the structured tree.
@@ -217,7 +219,7 @@ will be transformed into:
 </div>
 ```
 
-* Emmet has a nice feature called ```Lorem Ipsum” generator``` to generate a dummy text,
+* Emmet has a nice feature to generate a dummy text it's called the Lorem Ipsum generator.
 
 this abbreviation:
 ```
@@ -233,7 +235,7 @@ omnis perspiciatis quo sequi ut. Asperiores corporis repellat suscipit?
 </p>
 ```
 
-* We can add a number To control the amount of words been generated.
+* We can add a number to control the amount of words been generated.
 
 this abbreviation:
 ```
@@ -324,3 +326,7 @@ will be transformed into:
   <li class="class-8"></li>
 </ol>
 ```
+
+#### Generating CSS with Emmet.
+
+

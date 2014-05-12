@@ -1,6 +1,7 @@
 ---
 title: Configure AngularJS apps in Travis CI
 tags:
+  - yeoman.io
   - angularjs
   - angular
   - javascript
@@ -13,17 +14,19 @@ author: CarlosMantilla
 ---
 {% include JB/setup %}
 
-If your plan is create a new open source project or contribute in a popular project.
+A great programmer, not only need great tools and skills when work in a new open source project or contribute to a popular one.
 
-Continuous integration Tools like [Travis CI](https://travis-ci.org/) are fundamentals, to have a nice trip! to continous deployment.
+In this road to the next release of the application always have many obstacles and detours (improvisation and losing focus of the specifications application), best practices could save us for that kind of issues, hereby continuous integration tools like [Travis CI](https://travis-ci.org/) are fundamentals, to have a nice trip! to continuous deployment.
 
-We can implement this very fast in an [AngularJS](https://angularjs.org/) application using [yeoman.io](http://yeoman.io/), and the powerful [AngularJS generator](https://github.com/yeoman/generator-angular), this create test files and configuration files for the tools like travis, karma and grunt.
+We can implement this very fast in an [AngularJS](https://angularjs.org/) application using [yeoman.io](http://yeoman.io/), and the powerful [AngularJS generator](https://github.com/yeoman/generator-angular), this create test files structure and configuration files to test with karma, grunt anf travis.
 
 <!-- more -->
 
-Here you can find an [example](https://github.com/ceoaliongroo/contrib/tree/master/angular-travis) to accelerate the configuration process and you can go directly to create the logic of your application.
+Here you can find an [example](https://github.com/ceoaliongroo/angular-travis-config-example) code.
 
-Let's configure together travis ci for the AngularJS application genereted by yeoman.io:
+Let's configure together travis ci for the AngularJS application genereted by [yeoman.io](http://yeoman.io/):
+
+# Create the application and configure.
 
 - Create new angular application
 
@@ -45,20 +48,16 @@ $ yo angular:app application_name
 ```
 
 Adding the line `browsers: ['Firefox']` permit run the test with firefox, this is compatible with travis ci.
+#Prerequisite: Firefox browser 17+ installed locally for 'grunt test' locally.
 
-- Open karma.conf.js and change to Firefox travis ci do not support chrome configure by default.
-
-```javascript
-  browsers: ['Firefox'],
-```
-
-- Install karma and dependencies to test.
+- Install karma and dependencies to test in travis with firefox.
 
 ```bash
 $ npm install karma grunt-karma karma-jasmine karma-firefox-launcher --save-dev
 ```
 
-- Modify travis ci configuration file to run karma unit test files, you can open travis.yml (normally in the root of the project):
+- Modify travis ci configuration file to run karma unit test files, you can open .travis.yml
+#Have to be in the root folder of the github repository.):
 
 ```yaml
   language: node_js
@@ -74,6 +73,7 @@ $ npm install karma grunt-karma karma-jasmine karma-firefox-launcher --save-dev
     - 'npm install -g bower grunt-cli karma-cli'
     - 'bower install'
 ```
+# Configure Github Webhook and Test.
 
 - Click the icon Settings
 
@@ -87,10 +87,10 @@ $ npm install karma grunt-karma karma-jasmine karma-firefox-launcher --save-dev
 
 ![]({{BASE_PATH}}/assets/images/posts/configure-angularjs-travis-ci/configure.png)
 
+- Push some code and check the test is runnig on travis ci site.
 
-- Push some code and check the test runnig on travis ci site.
+![]({{BASE_PATH}}/assets/images/posts/configure-angularjs-travis-ci/testing.png)
 
-
-Extra points: There are good articles and videos that explain, all the importance and the process of mantain continous integration in your angularjs project.
+Now every commit you will be inform if some commit broke the application.
 
 

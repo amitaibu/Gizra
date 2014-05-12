@@ -20,11 +20,11 @@ The idea behind it is to instantly expand simple abbreviations into complex code
 The creator of Emmet is <a href="http://emmet.io/credits/">Sergey Chikuyonok</a>.   
 It’s available for many popular text editors such as: Sublime text, Phpstrom, Eclipse, Aptana, TextMate, Coda, Nodepad++ and many more.
 
-For those who don’t know what an abbreviation is ?
+**For those who don’t know what an abbreviation is ?**
 Abbreviation It’s a shortened form of a word or phrase. Usually, but not always, it consists of a letter or group of letters taken from the word or phrase.   
 Emmet use these abbreviations to parse them in runtime and transform them into structured code block, HTML, CSS, XSL or any other structured markup.
 This tutorial will mainly review the abbreviations of the html and a little bit of the css.
-for extended information about the usage of Emmet and complete list of available abbreviations use the official <a href="http://docs.emmet.io/cheat-sheet//">cheat sheet</a>.
+For complete list of available abbreviations use the official <a href="http://docs.emmet.io/cheat-sheet//">cheat sheet</a>.
 Let’s move on to the examples and let the cool part begin ;)
 
 this abbreviation:
@@ -329,8 +329,11 @@ will be transformed into:
 #### Generating CSS with Emmet.
 Emmet has the ability to provide shorthands for CSS properties.
 This mean you have an arsenal of predefined snippets for properties.
-That's not all. Emmet also gives you the ability you to define values for these properties as you declare the abbreviation.
+But that's not all, Emmet also gives you the ability to define values for these properties as you declare the abbreviation.
 If you want to view the complete list of available snippets go to the css section of the official cheat sheet (the link is at the first section of this tutorial).
+
+
+Lets say that I want to add a ```margin``` property to my class and I want the ```top + bottom  = 10px``` and the ```right + left = 5px```.
 
 this abbreviation:
 ```
@@ -340,7 +343,7 @@ this abbreviation:
 will be transformed into:
 ```css
 .some-class {
-  margin: 10px 10px;
+  margin: 10px 5px;
 }
 ```
 

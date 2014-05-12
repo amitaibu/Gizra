@@ -48,7 +48,7 @@ $ yo angular:app application_name
 ```
 
 Adding the line `browsers: ['Firefox']` permit run the test with firefox, this is compatible with travis ci.
-#Prerequisite: Firefox browser 17+ installed locally for 'grunt test' locally.
+*Prerequisite: Firefox browser 17+ installed locally for 'grunt test' locally.*
 
 - Install karma and dependencies to test in travis with firefox.
 
@@ -57,7 +57,7 @@ $ npm install karma grunt-karma karma-jasmine karma-firefox-launcher --save-dev
 ```
 
 - Modify travis ci configuration file to run karma unit test files, you can open .travis.yml
-#Have to be in the root folder of the github repository.):
+*Have to be in the root folder of the github repository.*
 
 ```yaml
   language: node_js
@@ -91,6 +91,6 @@ $ npm install karma grunt-karma karma-jasmine karma-firefox-launcher --save-dev
 
 ![]({{BASE_PATH}}/assets/images/posts/configure-angularjs-travis-ci/testing.png)
 
-Now every commit you will be inform if some commit broke the application.
+Now every commit you will be notify, if some commit broke the application.
 
 

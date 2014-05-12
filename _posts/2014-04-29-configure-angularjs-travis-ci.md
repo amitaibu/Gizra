@@ -17,7 +17,7 @@ If your plan is create a new open source project or contribute in a popular proj
 
 Continuous integration Tools like [Travis CI](https://travis-ci.org/) are fundamentals, to have a nice trip! to continous deployment.
 
-We can implement this very fast in an [AngularJS](https://angularjs.org/) application using yeoman.io, and the powerful [AngularJS generator](https://github.com/yeoman/generator-angular), this create test files and configuration files for the tools like travis, karma and grunt.
+We can implement this very fast in an [AngularJS](https://angularjs.org/) application using [yeoman.io](http://yeoman.io/), and the powerful [AngularJS generator](https://github.com/yeoman/generator-angular), this create test files and configuration files for the tools like travis, karma and grunt.
 
 <!-- more -->
 
@@ -25,7 +25,13 @@ Here you can find an [example](https://github.com/ceoaliongroo/contrib/tree/mast
 
 Let's configure together travis ci for the AngularJS application genereted by yeoman.io:
 
-- Open Gruntfile.js and modify the
+- Create new angular application
+
+```bash
+$ yo angular:app application_name
+```
+
+- Open Gruntfile.js and modify the karma configuration:
 
 ```javascript
   // Test settings
@@ -46,11 +52,10 @@ Adding the line `browsers: ['Firefox']` permit run the test with firefox, this i
   browsers: ['Firefox'],
 ```
 
-- Install dependencies to test.
+- Install karma and dependencies to test.
 
-Karma:
 ```bash
-# npm install karma grunt-karma karma-jasmine karma-firefox-launcher --save-dev
+$ npm install karma grunt-karma karma-jasmine karma-firefox-launcher --save-dev
 ```
 
 - Modify travis ci configuration file to run karma unit test files, you can open travis.yml (normally in the root of the project):
@@ -70,12 +75,21 @@ Karma:
     - 'bower install'
 ```
 
-- Configure webhook in github.
+- Click the icon Settings
+
+![]({{BASE_PATH}}/assets/images/posts/configure-angularjs-travis-ci/settings.png)
+
+- Select Webhooks & Services, click the button Add service, search for travis ci
+
+![]({{BASE_PATH}}/assets/images/posts/configure-angularjs-travis-ci/webhooks.png)
+
+- Configure github webhook for travis ci to automatic test each commit.
+
+![]({{BASE_PATH}}/assets/images/posts/configure-angularjs-travis-ci/configure.png)
 
 
+- Push some code and check the test runnig on travis ci site.
 
-
-- Check the test runnig in travis ci.
 
 Extra points: There are good articles and videos that explain, all the importance and the process of mantain continous integration in your angularjs project.
 

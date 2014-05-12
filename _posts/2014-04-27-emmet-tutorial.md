@@ -346,7 +346,24 @@ will be transformed into:
   margin: 10px 5px;
 }
 ```
+If we examine the syntax we can see we have the first letter of the property ```m = margin``` and right next to it we supply the values we want separated by hyphens.
 
+##### Emmet's measuring units.
+* Default measuring unit for integers is ```px```.
+* Default measuring unit for floats it's ```em```
+* When explicitly defining units, you don’t need to use hyphens to separate values.
+* You can define other units as you like.
 
+this abbreviation:
+```
+ m10-5 ???????????????????????????????????????????
+```
+
+will be transformed into:
+```css
+.some-class {
+  margin: 10px 5px; >>>>>>>>>>>>>>>>
+}
+```
 
 

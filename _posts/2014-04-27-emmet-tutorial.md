@@ -361,7 +361,6 @@ If we examine the syntax we can see we have the first letter of the property ```
    * e => em
    * x => ex
 
-
 this abbreviations:
 ```
 .some-class {
@@ -375,5 +374,27 @@ will be transformed into:
   margin: 5em 10% 15ex 20pt;
 }
 ```
+
+**In order to define a negative value for the property, all you need to do is add a hyphen before to the value ```-```**
+
+this abbreviations:
+```
+.some-class {
+  m5--10
+  p5p-10p
+}
+```
+
+will be transformed into:
+```css
+.some-class {
+  margin: 5px -10px;
+  padding: 5% -10%;
+}
+```
+
+##### Color values
+
+
 
 

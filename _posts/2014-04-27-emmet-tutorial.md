@@ -24,7 +24,9 @@ It’s available for many popular text editors such as: Sublime text, Phpstrom, 
 Abbreviation It’s a shortened form of a word or phrase. Usually, but not always, it consists of a letter or group of letters taken from the word or phrase.   
 Emmet use these abbreviations to parse them in runtime and transform them into structured code block, HTML, CSS, XSL or any other structured markup.
 This tutorial will mainly review the abbreviations of the html and a little bit of the css.
-For complete list of available abbreviations use the official <a href="http://docs.emmet.io/cheat-sheet//">cheat sheet</a>.
+* For the official <a href="http://docs.emmet.io/">Emmet documentation</a>.
+* For the complete list of available abbreviations use the official <a href="http://docs.emmet.io/cheat-sheet/">cheat sheet</a>.
+
 Let’s move on to the examples and let the cool part begin ;)
 
 this abbreviation:
@@ -333,11 +335,13 @@ But that's not all, Emmet also gives you the ability to define values for these 
 If you want to view the complete list of available snippets go to the css section of the official cheat sheet (the link is at the first section of this tutorial).
 
 
-Lets say that I want to add a ```margin``` property to my class and I want the ```top + bottom  = 10px``` and the ```right + left = 5px```.
+Lets say that you want to add a ```margin``` property to my class and you want the ```top + bottom  = 10px``` and the ```right + left = 5px```.
 
 this abbreviation:
 ```
- m10-5
+.some-class {
+  m10-5
+}
 ```
 
 will be transformed into:
@@ -350,19 +354,25 @@ If we examine the syntax we can see we have the first letter of the property ```
 
 ##### Emmet's measuring units.
 * Default measuring unit for integers is ```px```.
-* Default measuring unit for floats it's ```em```
+* Default measuring unit for floats it's ```em```.
 * When explicitly defining units, you don’t need to use hyphens to separate values.
-* You can define other units as you like.
+* You can define other units as you like (can use the full name or use Emmet's value aliases.
+   * p => %
+   * e => em
+   * x => ex
 
-this abbreviation:
+
+this abbreviations:
 ```
- m10-5 ???????????????????????????????????????????
+.some-class {
+  m5e10p15x20pt
+}
 ```
 
 will be transformed into:
 ```css
 .some-class {
-  margin: 10px 5px; >>>>>>>>>>>>>>>>
+  margin: 5em 10% 15ex 20pt;
 }
 ```
 

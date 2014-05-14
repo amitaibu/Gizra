@@ -8,7 +8,7 @@ tags:
   - test
   - travis-ci
   - examples
-permalink: "/content/configure-angularjs-"
+permalink: "/content/configure-angularjs-travis-ci"
 layout: post
 author: CarlosMantilla
 ---

@@ -335,7 +335,7 @@ But that's not all, Emmet also gives you the ability to define values for these 
 If you want to view the complete list of available snippets go to the css section of the official cheat sheet (the link is at the first section of this tutorial).
 
 
-Lets say that you want to add a ```margin``` property to my class and you want the ```top + bottom  = 10px``` and the ```right + left = 5px```.
+Lets say that you want to add a ```margin``` property to "some-class" and you want the ```top + bottom  = 10px``` and the ```right + left = 5px```.
 
 this abbreviation:
 ```
@@ -375,7 +375,7 @@ will be transformed into:
 }
 ```
 
-**In order to define a negative value for the property, all you need to do is add a hyphen before to the value ```-```**
+* In order to define a negative value for the property, all you need to do is add a hyphen before to the value ```-```.
 
 this abbreviations:
 ```
@@ -394,6 +394,45 @@ will be transformed into:
 ```
 
 ##### Color values
+
+* Emmet has a built in support for hex color values. You can use the short notation and supply one, two, three or six characters as color value.
+
+this abbreviations:
+```
+.some-class {
+  c#f
+  c#f5
+  c#fc0
+  c#d2047d
+}
+```
+
+will be transformed into:
+```css
+.some-class {
+  color: #ffffff;
+  color: #f5f5f5;
+  color: #ffcc00;
+  color: #d2047d;
+}
+
+Lets say that you want to add a ```border``` property to my "some-class" and you want the ```width  = 2px``` and the ```color = #000000 (Black)```.
+
+this abbreviations:
+```
+.some-class {
+bd2#0
+}
+```
+
+will be transformed into:
+```css
+.some-class {
+  border: 2px #000000;
+}
+
+
+
 
 
 

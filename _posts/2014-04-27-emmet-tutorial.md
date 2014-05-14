@@ -417,7 +417,7 @@ will be transformed into:
 }
 ```
 
-* Lets say that you want to add a ```border``` property to my "some-class" and you want the ```width  = 2px``` and the ```color = #000000 (Black)```.
+* Lets say that you want to add a ```border``` property to "some-class" and you want the ```width  = 2px``` and the ```color = #000000 (Black)```.
 
 this abbreviations:
 ```

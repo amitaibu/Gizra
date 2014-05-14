@@ -415,8 +415,9 @@ will be transformed into:
   color: #ffcc00;
   color: #d2047d;
 }
+```
 
-Lets say that you want to add a ```border``` property to my "some-class" and you want the ```width  = 2px``` and the ```color = #000000 (Black)```.
+* Lets say that you want to add a ```border``` property to my "some-class" and you want the ```width  = 2px``` and the ```color = #000000 (Black)```.
 
 this abbreviations:
 ```
@@ -430,10 +431,6 @@ will be transformed into:
 .some-class {
   border: 2px #000000;
 }
-
-
-
-
-
+```
 
 
